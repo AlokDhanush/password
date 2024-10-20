@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center; 
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto; 
+        }
+
+        label {
+            display: block; 
+            margin: 10px 0 5px; 
+            font-weight: bold; 
+        }
+
+        select {
+            margin: 10px 0;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .checkbox-group {
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+            margin: 10px 0;
+        }
+
+        .checkbox-group label {
+            display: flex; 
+            align-items: center; 
+            margin: 5px 0; 
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Password Generator</h1>
+    <form action="{% url 'password' %}">
+        <label for="cars">Choose password length:</label>
+        <select name="select" id="cars">
+            <option value="6">6 characters</option>
+            <option value="7">7 characters</option>
+            <option value="8">8 characters</option>
+            <option value="9">9 characters</option>
+            <option value="10">10 characters</option>
+            <option value="11">11 characters</option>
+            <option value="12">12 characters</option>
+        </select>
+
+        <div class="checkbox-group">
+            <label for="uppercase">
+                <input type="checkbox" name="uppercase" id="uppercase"> Uppercase
+            </label>
+            <label for="numbers">
+                <input type="checkbox" name="numbers" id="numbers"> Numbers
+            </label>
+            <label for="special">
+                <input type="checkbox" name="special" id="special"> Special Characters
+            </label>
+        </div>
+
+        <input type="submit" value="Generate Password">
+    </form>
+</div>
+
+</body>
+</html>
